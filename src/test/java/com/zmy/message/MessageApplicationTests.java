@@ -1,4 +1,4 @@
-package com.zmy.message.message;
+package com.zmy.message;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
