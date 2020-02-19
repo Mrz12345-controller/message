@@ -23,7 +23,7 @@ public class GithubProvider {
                 String token = string.split("&")[0].split("=")[1];
                 System.out.println(token);
                 return token;
-             } catch (IOException e) {
+             } catch (Exception e) {
                 e.printStackTrace();
             }
             return null;

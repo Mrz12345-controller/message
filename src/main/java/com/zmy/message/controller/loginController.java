@@ -1,6 +1,7 @@
 package com.zmy.message.controller;
 
 import com.zmy.message.dto.AccessTokenDTO;
+import com.zmy.message.dto.GithubUser;
 import com.zmy.message.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,9 @@ public class loginController {
         accessTokenDTO.setCode(code);
         accessTokenDTO.setRedirect_uri("http://localhost:8887/callback");
         accessTokenDTO.setState(state);
-        githubProvider.getAsseccToken(accessTokenDTO);
+        String asseccToken = githubProvider.getAsseccToken(accessTokenDTO);
+        GithubUser user = githubProvider.getUser(asseccToken);
+        System.out.println(user);
         return "index";
     }
 
